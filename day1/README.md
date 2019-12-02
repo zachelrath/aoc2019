@@ -1,6 +1,8 @@
 # Day 1
 
 ```bash
-# Run with provided file of input module masses
-elixir day1.exs input.txt
+# 1st time only - compile "Fuel" module
+make build
+# Run the simulation with AOC provided input
+make run
 ```
