@@ -44,7 +44,7 @@ class Point {
         const [x,y] = str.split(",");
         return new Point(x,y);
     }
-    static resetCounter() {
+    static ResetStepsCounter() {
         stepsCounter = 0;
     }
 }
