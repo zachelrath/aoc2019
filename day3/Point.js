@@ -1,11 +1,17 @@
 
+let stepsCounter = 0;
+
 class Point {
     constructor(x,y) {
         this.x=x;
         this.y=y;
+        this.steps = stepsCounter++;
     }
     dist() {
         return Math.abs(this.x) + Math.abs(this.y);
+    }
+    getSteps() {
+        return this.steps;
     }
     /**
      * Return a list of all points between us along the given path,
@@ -29,11 +35,17 @@ class Point {
     toString() {
         return `(${this.x},${this.y})`;
     }
+    toStringWithSteps() {
+        return `(${this.x},${this.y} [${this.steps}])`;
+    }
     static fromString(str) {
         // trim off parentheses
         str = str.substring(1,str.length - 1);
         const [x,y] = str.split(",");
         return new Point(x,y);
+    }
+    static resetCounter() {
+        stepsCounter = 0;
     }
 }
 
