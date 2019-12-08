@@ -21,9 +21,10 @@ const buildMapOfVisitedCoords = (coordsArray) => {
 
 (async () => {
     const rawInput = await fs.readFileSync(filePath, "utf8");
-    const [ wire1In, wire2In ] = rawInput.toString("ascii").split("\n");
-    const wire1CoordsVisited = getCoordsVisited(wire1In.split(","));
-    const wire2CoordsVisited = getCoordsVisited(wire2In.split(","));
+    const [
+        wire1CoordsVisited,
+        wire2CoordsVisited,
+    ] = rawInput.toString("ascii").split("\n").map(paths => getCoordsVisited(paths.split(",")));
     const wire1StrsMap = buildMapOfVisitedCoords(wire1CoordsVisited);
     const wire2StrsMap = buildMapOfVisitedCoords(wire2CoordsVisited);
     const intersectionPoints = wire2CoordsVisited.filter(p => wire1StrsMap.has(p.toString()));
