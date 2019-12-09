@@ -1,10 +1,6 @@
 defmodule Day4 do
   def nonDecreasing({nil,_}), do: true
   def nonDecreasing({a,b}), do: b >= a
-  def nonDecreasing({nil,nil,nil,_}), do: true
-  def nonDecreasing({nil,nil,_,_}), do: true
-  def nonDecreasing({nil,_,_,_}), do: true
-  def nonDecreasing({a,b,c,d}), do: b >= a and c >= b and d >= c
   def adjacentDigitsEqual({nil,_}), do: false
   def adjacentDigitsEqual({a,b}), do: a == b
   def getPairs(x) do
