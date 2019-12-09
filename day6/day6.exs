@@ -41,7 +41,7 @@ defmodule Day6 do
     # Find their common ancestors using Enum.zip,
     # which will stop zipping once we get to a divergence,
     # and subtract that distance from the two tree lengths
-    length(youTree) + length(santaTree) + 2 - (length(commonAncestors) * 2)
+    length(youTree) + length(santaTree) + 2 - (length(commonAncestors)-1 * 2)
 
   end
 
